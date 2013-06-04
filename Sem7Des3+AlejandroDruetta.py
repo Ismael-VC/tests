@@ -41,7 +41,7 @@ def main():
             if i not in diccionario:
                 significado = raw_input("¿Cómo se escribe '%s' en %s?: " % (i,lengua))
                 significado = significado.lower()
-                significado = significado.title()
+                significado = significado.capitalize()
                 diccionario[i] = significado
 
     print "\nDiccionario: \n"
