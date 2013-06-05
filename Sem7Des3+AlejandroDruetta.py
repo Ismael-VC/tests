@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import string
 
 def a_palabras(frase):
 
@@ -35,17 +36,18 @@ def main():
 
         print
         for i in palabras:
-
-            i = i.capitalize()
+            i = unicode(i, 'utf-8')
+            i = i.title()
 
             if i not in diccionario:
                 significado = raw_input("¿Cómo se escribe '%s' en %s?: " % (i,lengua))
                 significado = significado.lower()
-                significado = significado.capitalize()
+                significado = unicode(significado, 'utf-8')
+                significado = significado.title()
                 diccionario[i] = significado
 
     print "\nDiccionario: \n"
     for i in diccionario:
-        print i, "\t=", diccionario[i]
+        print i, "\t=", diccionario[i].title()
 
 main()
