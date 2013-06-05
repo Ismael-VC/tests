@@ -36,7 +36,7 @@ def main():
         print
         for i in palabras:
 
-            i = i.title()
+            i = i.capitalize()
 
             if i not in diccionario:
                 significado = raw_input("¿Cómo se escribe '%s' en %s?: " % (i,lengua))
