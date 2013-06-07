@@ -108,7 +108,9 @@ def modificar_contacto():
         elif modificacion == '5':
             nombre_in = input('\nIngresa el nuevo nombre: ')
             agenda[contacto_mod]['nombre'] = nombre_in if nombre_in != '' else None
-
+            agenda[nombre_in] = agenda[contacto_mod]
+            del agenda[contacto_mod]
+            
         elif modificacion == '6':
             telefono_in = input('\nIngresa el teléfono: ')
             agenda[contacto_mod]['telefono'] = telefono_in if telefono_in != '' else None
