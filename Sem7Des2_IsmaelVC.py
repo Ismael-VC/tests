@@ -35,6 +35,7 @@ def crear_contacto():
     agenda[nombre]['localidad'] = localidad_in if localidad_in != '' else None
 
     print(plantilla.format(**agenda[nombre]))
+    
     input('\nPulsa enter para continuar.')
 
 
@@ -50,10 +51,10 @@ def eliminar_contacto():
     try:
         del agenda[contacto_del]
         print('\nContacto eliminado!')
-        input('\nPulsa enter para continuar.')
     except KeyError:
         print('\nEl contacto {contacto_del}, no existe!!!'.format(**vars()))
-        input('\nPulsa enter para continuar.')
+    
+    input('\nPulsa enter para continuar.')
 
 
 
@@ -67,10 +68,10 @@ def buscar_contacto():
 
     try:
         print(plantilla.format(**agenda[contacto_busq]))
-        input('\nPulsa enter para continuar.')
     except KeyError:
         print('\nEl contacto {contacto_busq}, no existe!!!'.format(**vars()))
-        input('\nPulsa enter para continuar.')
+    
+    input('\nPulsa enter para continuar.')
 
 
 
