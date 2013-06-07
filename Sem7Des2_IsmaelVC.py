@@ -149,7 +149,7 @@ Bienvenido:
         elif opcion == '5':
             sys.exit()
         else:
-            print('Opcion invalida!!!')
+            print('\nOpcion invalida!!!')
 
         input('\nPulsa enter para continuar.')
     
