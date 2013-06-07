@@ -14,7 +14,7 @@ plantilla = '''
 Localidad:\t{localidad}'''
 
 
-def crear_contacto():
+def crear_contacto():   
     nombre = input('\nIngresa el nombre: ')
     agenda[nombre] = dict(nombre=nombre)
 
@@ -132,6 +132,8 @@ Bienvenido:
             modificar_contacto()
         elif opcion == '5':
             sys.exit()
+        else:
+            print('Opcion invalida!!!')
 
 
 
