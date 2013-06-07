@@ -16,7 +16,7 @@ plantilla = '''
 Localidad:\t{localidad}'''
 
 
-def crear_contacto():   
+def crear_contacto():
     nombre = input('\nIngresa el nombre: ')
     agenda[nombre] = dict(nombre=nombre)
 
@@ -36,6 +36,7 @@ def crear_contacto():
     agenda[nombre]['localidad'] = localidad_in if localidad_in != '' else None
 
     print(plantilla.format(**agenda[nombre]))
+    input('\nPulsa enter para continuar.')
 
 
 
@@ -49,9 +50,11 @@ def eliminar_contacto():
 
     try:
         del agenda[contacto_del]
+        print('\nContacto eliminado!')
+        input('\nPulsa enter para continuar.')
     except KeyError:
         print('\nEl contacto {contacto_del}, no existe!!!'.format(**vars()))
-
+        input('\nPulsa enter para continuar.')
 
 
 def buscar_contacto():
@@ -64,9 +67,10 @@ def buscar_contacto():
 
     try:
         print(plantilla.format(**agenda[contacto_busq]))
+        input('\nPulsa enter para continuar.')
     except KeyError:
         print('\nEl contacto {contacto_busq}, no existe!!!'.format(**vars()))
-
+        input('\nPulsa enter para continuar.')
 
 
 def modificar_contacto():
@@ -77,37 +81,43 @@ def modificar_contacto():
 
     contacto_mod = input('\nEscribe el nombre del contacto: ')
 
-    for indice, llave in enumerate(sorted(agenda[contacto_mod].keys())):
-        print('\t%s) %s' % (indice +1, llave))
+    try:
+        for indice, llave in enumerate(sorted(agenda[contacto_mod].keys())):
+            print('\t%s) %s' % (indice +1, llave))
 
-    modificacion = input('\nSelecciona el numero de la opcion que deseas modificar: ')
+        modificacion = input('\nSelecciona el numero de la opcion que deseas modificar: ')
 
-    if modificacion == '1':
-        apellido_in = input('\nIngresa el apellido: ')
-        agenda[contacto_mod]['apellido'] = apellido_in if apellido_in != '' else None
+        if modificacion == '1':
+            apellido_in = input('\nIngresa el apellido: ')
+            agenda[contacto_mod]['apellido'] = apellido_in if apellido_in != '' else None
 
-    elif modificacion == '2':
-        correo_in = input('\nIngresa el e-mail: ')
-        agenda[contacto_mod]['correo'] = correo_in if correo_in != '' else None
+        elif modificacion == '2':
+            correo_in = input('\nIngresa el e-mail: ')
+            agenda[contacto_mod]['correo'] = correo_in if correo_in != '' else None
 
-    elif modificacion == '3':
-        edad_in = input('\nIngresa la edad: ')
-        agenda[contacto_mod]['edad'] = edad_in if edad_in != '' else None
+        elif modificacion == '3':
+            edad_in = input('\nIngresa la edad: ')
+            agenda[contacto_mod]['edad'] = edad_in if edad_in != '' else None
 
-    elif modificacion == '4':
-        localidad_in = input('\nIngresa la dirección: ')
-        agenda[contacto_mod]['localidad'] = localidad_in if localidad_in != '' else None
+        elif modificacion == '4':
+            localidad_in = input('\nIngresa la dirección: ')
+            agenda[contacto_mod]['localidad'] = localidad_in if localidad_in != '' else None
 
-    elif modificacion == '5':
-        nombre_in = input('\nIngresa el nuevo nombre: ')
-        agenda[contacto_mod]['nombre'] = nombre_in if nombre_in != '' else None
+        elif modificacion == '5':
+            nombre_in = input('\nIngresa el nuevo nombre: ')
+            agenda[contacto_mod]['nombre'] = nombre_in if nombre_in != '' else None
 
-    elif modificacion == '6':
-        telefono_in = input('\nIngresa el teléfono: ')
-        agenda[contacto_mod]['telefono'] = telefono_in if telefono_in != '' else None
+        elif modificacion == '6':
+            telefono_in = input('\nIngresa el teléfono: ')
+            agenda[contacto_mod]['telefono'] = telefono_in if telefono_in != '' else None
 
-    else:
-        print('Opcion invalida!!!')
+        else:
+            print('\nOpcion invalida!!!')
+
+    except KeyError:
+        print('\nEl contacto {contacto_mod}, no existe!!!'.format(**vars()))
+
+    input('\nPulsa enter para continuar.')
 
 
 
@@ -115,7 +125,6 @@ def main():
     while True:
         call('clear')
         print('''
-------------------------------------------------------------------------
 Bienvenido:
 
 1) Crear nuevo contacto.
