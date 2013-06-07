@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 
+from subprocess import call
 import sys
+
 
 
 agenda = dict()
@@ -111,6 +113,7 @@ def modificar_contacto():
 
 def main():
     while True:
+        call('clear')
         print('''
 ------------------------------------------------------------------------
 Bienvenido:
