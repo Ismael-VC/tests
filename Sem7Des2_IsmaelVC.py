@@ -151,7 +151,9 @@ Bienvenido:
         else:
             print('Opcion invalida!!!')
 
-
+        input('\nPulsa enter para continuar.')
+    
+    
 
 if __name__ == '__main__':
     main()
