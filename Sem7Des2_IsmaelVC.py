@@ -56,6 +56,7 @@ def eliminar_contacto():
         input('\nPulsa enter para continuar.')
 
 
+
 def buscar_contacto():
     print('\nContactos:')
 
@@ -70,6 +71,7 @@ def buscar_contacto():
     except KeyError:
         print('\nEl contacto {contacto_busq}, no existe!!!'.format(**vars()))
         input('\nPulsa enter para continuar.')
+
 
 
 def modificar_contacto():
