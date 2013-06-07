@@ -5,7 +5,6 @@ from subprocess import call
 import sys
 
 
-
 agenda = dict()
 plantilla = '''
    Nombre:\t{nombre}
