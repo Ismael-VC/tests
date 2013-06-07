@@ -35,7 +35,7 @@ def crear_contacto():
     agenda[nombre]['localidad'] = localidad_in if localidad_in != '' else None
 
     print(plantilla.format(**agenda[nombre]))
-    
+
     input('\nPulsa enter para continuar.')
 
 
@@ -53,7 +53,7 @@ def eliminar_contacto():
         print('\nContacto eliminado!')
     except KeyError:
         print('\nEl contacto {contacto_del}, no existe!!!'.format(**vars()))
-    
+
     input('\nPulsa enter para continuar.')
 
 
@@ -70,7 +70,7 @@ def buscar_contacto():
         print(plantilla.format(**agenda[contacto_busq]))
     except KeyError:
         print('\nEl contacto {contacto_busq}, no existe!!!'.format(**vars()))
-    
+
     input('\nPulsa enter para continuar.')
 
 
@@ -108,9 +108,9 @@ def modificar_contacto():
         elif modificacion == '5':
             nombre_in = input('\nIngresa el nuevo nombre: ')
             agenda[contacto_mod]['nombre'] = nombre_in if nombre_in != '' else None
-            agenda[nombre_in] = agenda[contacto_mod]
+            agenda[nombre_in] = agenda[contacto_mod]
             del agenda[contacto_mod]
-            
+
         elif modificacion == '6':
             telefono_in = input('\nIngresa el teléfono: ')
             agenda[contacto_mod]['telefono'] = telefono_in if telefono_in != '' else None
